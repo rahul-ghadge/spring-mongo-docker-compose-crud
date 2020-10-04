@@ -1,7 +1,7 @@
 # spring-mongo-docker-compose-crud
 
 Docker Compose runs multi-container Docker application. It lets us to run multiple docker container with single docker-compose command by reading configuration file.
-Here we are using multiple containers which are depends on each other(*Mongo container with REST APIs using Spring boot application custom container*)
+Here we are using multiple containers which are depends on each other(*Mongo container with REST APIs using Spring boot application custom container*).  
 This project explains dockerized CRUD (**C**reate, **R**ead, **U**pdate, **D**elete) operations with MongoTemplate and MongoRepository using spring boot and mongo DB.
 In this app we are using Spring Data JPA for built-in methods to do CRUD operations and Mongo queries using MongoTemplate.     
 `@EnableMongoRepositories` annotation is used on main class to Enable Mongo related configuration, which will read properties from `application.yml` file.
