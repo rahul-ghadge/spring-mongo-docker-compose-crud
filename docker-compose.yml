@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:4.2.10
+    container_name: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    network_mode: host
+    volumes:
+      - $HOME/mongo:/data/db
+    healthcheck:
+      test: "exit 0"
+
+  superhero-service:
+    container_name: smdc-crud-superhero-service
+    build: superhero-service
+    image: superhero-service
+    depends_on:
+      - mongo
+    network_mode: "host"
+    hostname: localhost
+    restart: always
+    ports:
+      - 8088:8088
+    healthcheck:
+      test: "exit 0"
